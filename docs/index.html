@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Preview social posts against your rules | Social Payload Preview</title>
+  <meta name="description" content="Compare one draft across custom character, link, hashtag, and media rules from the same editor.">
+  <link rel="canonical" href="https://musabukhari237.github.io/social-payload-preview/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Preview social posts against your rules | Social Payload Preview">
+  <meta property="og:description" content="Compare one draft across custom character, link, hashtag, and media rules from the same editor.">
+  <meta property="og:url" content="https://musabukhari237.github.io/social-payload-preview/">
+  <meta property="og:image" content="https://musabukhari237.github.io/social-payload-preview/preview.png">
+  <meta property="og:image:alt" content="Social Payload Preview displaying a synthetic example result">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="app.css">
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+<header><a href="./" class="brand"><img src="logo.svg" alt="">Social Payload Preview</a><a href="https://github.com/MusaBukhari237/social-payload-preview" class="small-link">GitHub repository</a></header>
+<main>
+<section class="lead"><h1>Preview social posts against your rules</h1><p>Compare one draft across custom character, link, hashtag, and media rules from the same editor.</p></section>
+<div class="workspace">
+  <section class="panel" aria-labelledby="settings"><h2 id="settings">Draft and channel rules</h2>
+    <div class="inputs"><label class="wide">Post draft<textarea id="draft" rows="6" maxlength="40000" spellcheck="false"></textarea></label><label class="wide">Channel rules (JSON)<textarea id="source" rows="7" maxlength="100000" spellcheck="false"></textarea></label><label class="wide">Media dimensions (JSON)<textarea id="media" rows="3" maxlength="10000" spellcheck="false"></textarea></label></div>
+    <div class="actions"><button type="button" id="run">Check draft</button><button type="button" id="sample" class="quiet">Load example channels</button></div>
+    <small>Use your publishing rules for each channel. Enter attachment dimensions to check their aspect ratios.</small>
+  </section>
+  <section class="panel" aria-labelledby="result-title"><h2 id="result-title">Channel previews</h2>
+    <div class="result" id="result"><p class="result-summary" aria-live="polite">Load an example or paste your own input.</p></div>
+  </section>
+</div>
+</main>
+<footer><a class="small-link" href="https://github.com/MusaBukhari237/social-payload-preview/blob/main/LICENSE">MIT license</a></footer>
+</body>
+</html>
