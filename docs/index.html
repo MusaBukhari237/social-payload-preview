@@ -1,42 +1,140 @@
 <!doctype html>
 <html lang="en" data-app="social-payload-preview">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
-  <title>Preview social posts against your rules | Social Payload Preview</title>
-  <meta name="description" content="Compare one draft across custom character, link, hashtag, and media rules from the same editor.">
-  <link rel="canonical" href="https://musabukhari237.github.io/social-payload-preview/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Preview social posts against your rules | Social Payload Preview">
-  <meta property="og:description" content="Compare one draft across custom character, link, hashtag, and media rules from the same editor.">
-  <meta property="og:url" content="https://musabukhari237.github.io/social-payload-preview/">
-  <meta property="og:image" content="https://musabukhari237.github.io/social-payload-preview/preview.png">
-  <meta property="og:image:alt" content="Social Payload Preview displaying a synthetic example result">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="app.css">
-  <script type="module" src="app.mjs"></script>
-  <script type="module" src="experience.mjs"></script>
-  <script type="module" src="experience.mjs"></script>
-</head>
-<body>
-<a class="skip" href="#workspace">Skip to workspace</a>
-<header><a class="brand" href="./"><img src="logo.svg" alt="">Social Payload Preview</a><nav aria-label="Main"><a href="#guide">How to use</a><a class="repo" href="https://github.com/MusaBukhari237/social-payload-preview">GitHub ↗</a></nav></header>
-<main>
-<section class="masthead"><div class="intro"><p class="category">The publishing studio</p><h1>Make the draft fit.</h1><p class="description">Bring your post, your media, and your channel rules into one bright little publishing desk.</p></div><figure class="scene"><img src="Scene.jpg" alt="An editorial desk with notebook and laptop" width="1000" height="667" fetchpriority="high"></figure></section>
-<div class="workspace" id="workspace">
-  <section class="panel" aria-labelledby="settings"><h2 id="settings">Draft room</h2>
-    <div class="inputs"><label class="wide">Post draft<textarea id="draft" rows="6" maxlength="40000" spellcheck="false"></textarea></label><label class="wide">Channel rules (JSON)<textarea id="source" rows="7" maxlength="100000" spellcheck="false"></textarea></label><label class="wide">Media dimensions (JSON)<textarea id="media" rows="3" maxlength="10000" spellcheck="false"></textarea></label></div>
-    <div class="actions"><button type="button" id="run">Check draft</button><button type="button" id="sample" class="quiet">Load example channels</button></div>
-    <small>Use your publishing rules for each channel. Enter attachment dimensions to check their aspect ratios.</small>
-  </section>
-  <section class="panel" aria-labelledby="result-title" id="output-panel"><h2 id="result-title" tabindex="-1">Channel checks</h2><p class="result-status" id="result-status" aria-live="polite">Ready when you are</p>
-    <div class="result" id="result"><p class="result-summary" aria-live="polite">Load an example or paste your own input.</p></div>
-  </section>
-</div>
-<details class="guide" id="guide"><summary>How to use Social Payload Preview</summary><ol><li>Write or paste a draft and load example channel rules.</li><li>Set your own character, link, hashtag, and media limits.</li><li>Check each channel and download its diagnostics.</li></ol></details>
-</main>
-<footer><span>Social Payload Preview · <a href="https://github.com/MusaBukhari237/social-payload-preview/blob/main/LICENSE">MIT licensed</a></span><span class="credits"><a href="https://www.leadceleris.com/">LeadCeleris</a><a href="https://www.aifficiento.biz/">AIFFICIENTO</a><a href="Assets.md">Photo credits</a></span></footer>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <title>Preview social posts against your rules | Social Payload Preview</title>
+    <meta
+      name="description"
+      content="Compare one draft across custom character, link, hashtag, and media rules from the same editor."
+    />
+    <link rel="canonical" href="https://musabukhari237.github.io/social-payload-preview/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Preview social posts against your rules | Social Payload Preview"
+    />
+    <meta
+      property="og:description"
+      content="Compare one draft across custom character, link, hashtag, and media rules from the same editor."
+    />
+    <meta property="og:url" content="https://musabukhari237.github.io/social-payload-preview/" />
+    <meta
+      property="og:image"
+      content="https://musabukhari237.github.io/social-payload-preview/preview.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Social Payload Preview displaying a synthetic example result"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="app.css" />
+    <script type="module" src="app.mjs"></script>
+    <script type="module" src="experience.mjs"></script>
+    <script type="module" src="experience.mjs"></script>
+  </head>
+  <body>
+    <a class="skip" href="#workspace">Skip to workspace</a>
+    <header>
+      <a class="brand" href="./"><img src="logo.svg" alt="" />Social Payload Preview</a>
+      <nav aria-label="Main">
+        <a href="#guide">How to use</a
+        ><a class="repo" href="https://github.com/MusaBukhari237/social-payload-preview"
+          >GitHub ↗</a
+        >
+      </nav>
+    </header>
+    <main>
+      <section class="masthead">
+        <div class="intro">
+          <p class="category">The publishing studio</p>
+          <h1>Make the draft fit.</h1>
+          <p class="description">
+            Bring your post, your media, and your channel rules into one bright little publishing
+            desk.
+          </p>
+        </div>
+        <figure class="scene">
+          <img
+            src="Scene.jpg"
+            alt="An editorial desk with notebook and laptop"
+            width="1000"
+            height="667"
+            fetchpriority="high"
+          />
+        </figure>
+      </section>
+      <div class="workspace" id="workspace">
+        <section class="panel" aria-labelledby="settings">
+          <h2 id="settings">Draft room</h2>
+          <div class="inputs">
+            <label class="wide"
+              >Post draft<textarea
+                id="draft"
+                rows="6"
+                maxlength="40000"
+                spellcheck="false"
+              ></textarea></label
+            ><label class="wide"
+              >Channel rules (JSON)<textarea
+                id="source"
+                rows="7"
+                maxlength="100000"
+                spellcheck="false"
+              ></textarea></label
+            ><label class="wide"
+              >Media dimensions (JSON)<textarea
+                id="media"
+                rows="3"
+                maxlength="10000"
+                spellcheck="false"
+              ></textarea>
+            </label>
+          </div>
+          <div class="actions">
+            <button type="button" id="run">Check draft</button
+            ><button type="button" id="sample" class="quiet">Load example channels</button>
+          </div>
+          <small
+            >Use your publishing rules for each channel. Enter attachment dimensions to check their
+            aspect ratios.</small
+          >
+        </section>
+        <section class="panel" aria-labelledby="result-title" id="output-panel">
+          <h2 id="result-title" tabindex="-1">Channel checks</h2>
+          <p class="result-status" id="result-status" aria-live="polite">Ready when you are</p>
+          <div class="result" id="result">
+            <p class="result-summary" aria-live="polite">
+              Load an example or paste your own input.
+            </p>
+          </div>
+        </section>
+      </div>
+      <details class="guide" id="guide">
+        <summary>How to use Social Payload Preview</summary>
+        <ol>
+          <li>Write or paste a draft and load example channel rules.</li>
+          <li>Set your own character, link, hashtag, and media limits.</li>
+          <li>Check each channel and download its diagnostics.</li>
+        </ol>
+      </details>
+    </main>
+    <footer>
+      <span
+        >Social Payload Preview ·
+        <a href="https://github.com/MusaBukhari237/social-payload-preview/blob/main/LICENSE"
+          >MIT licensed</a
+        ></span
+      ><span class="credits"
+        ><a href="https://www.leadceleris.com/">LeadCeleris</a
+        ><a href="https://www.aifficiento.biz/">AIFFICIENTO</a
+        ><a href="Assets.md">Photo credits</a></span
+      >
+    </footer>
+  </body>
 </html>
